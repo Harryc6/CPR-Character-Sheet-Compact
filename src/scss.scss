@@ -1,0 +1,98 @@
+@import "layout/tabs/tab";
+
+.sheet-character-sheet {
+  min-width: 530px;
+  margin: 0 auto;
+}
+
+input[type='number'] {
+  text-align: center;
+  width: 2em !important;
+  -moz-appearance: textfield;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button.sheet-button-as-h4 {
+  background: transparent;
+  box-shadow: none;
+  border-style: none !important;
+  font-size: 1.4rem !important;
+  font-weight: bold;
+  margin: 0 !important;
+  padding: 0 !important;
+  &:before {
+    content: ' ' !important;
+  }
+}
+
+.sheet-columns {
+  display: inline-flex;
+  width: 100%;
+
+  & > .sheet-column {
+    //flex: 1;
+    margin-inline: auto;
+    display: block;
+    padding: 0 0.5rem;
+    text-align: center;
+  }
+  //& > .sheet-column-2 {
+  //  flex: 2;
+  //}
+  //& > .sheet-column-3 {
+  //  flex: 3;
+  //}
+  //& > .sheet-column-4 {
+  //  flex: 4;
+  //}
+  //& > .sheet-column-5 {
+  //  flex: 5;
+  //}
+  //& > .sheet-column-6 {
+  //  flex: 6;
+  //}
+  //& > .sheet-column-7 {
+  //  flex: 7;
+  //}
+  //& > .sheet-column-8 {
+  //  flex: 8;
+  //}
+  //& > .sheet-column-9 {
+  //  flex: 9;
+  //}
+  & > .sheet-column:first-child {
+    padding-left: 0;
+  }
+  & > .sheet-column:last-child {
+    padding-right: 0;
+  }
+
+  .sheet-roll-select {
+    width: auto;
+  }
+
+  .sheet-skill-icon  {
+    color: lightgray;
+  }
+  .sheet-skill-name  {
+
+  }
+  .sheet-skill-value  {
+  }
+}
+
+button.sheet-reset {
+  display: block;
+  //text-indent: -9999px;
+  width: 1rem;
+  height: 1rem;
+  background: url(src/img/redo.svg);
+  background-size: 1rem;
+  border: 0;
+}

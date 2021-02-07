@@ -1,0 +1,11 @@
+include tab-variables
+include tab-mixins
+
+div.sheet-character-sheet
+    span.sheet-tabbed
+        each tab, index in tabs
+             +tab(tab, (index + 1))
+
+        each tab, index in tabs
+            +tabContent(tab, (index + 1))
+

@@ -1,0 +1,7 @@
+mixin skill(skill)
+    div.sheet-skill
+        span.sheet-skill-icon
+        button.sheet-button-plain(type='roll' value="&{template:skill}{{charactername=@{character_name}}}" +
+        " {{skillname=<%= skill.name.replace(' (x2)', '') %>: @{skillname}}} {{skillvalue=@{skillvalue}}} {{statname=<%= skill.stat.replace('stat_', '') %>}} {{statvalue=@{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}}} {{finalmodifier=@{finalmodifier}}} {{roll=[[1d10 + @{skillvalue} + @{<%= skill.stat === 'stat_emp' ? 'empathy' : skill.stat %>}<% if (skill.stat ==='stat_ref' || skill.stat === 'stat_dex' || skill.stat === 'stat_move'){ %> + @{armor_penalty}<%} %> + @{finalmodifier}]]}} {{critroll=[[1d10]]}}")
+        input.sheet-skill-name(type='text' value=skill name='attr_' + skill)
+        input.sheet-skill-value(type='number' value=0 name='attr_' + skill)

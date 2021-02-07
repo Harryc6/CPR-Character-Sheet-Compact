@@ -1,0 +1,51 @@
+.sheet-tabbed {
+  width: auto;
+  display: block;
+  position: relative;
+
+  label.sheet-tab {
+    display: inline-block;
+    padding: 5px;
+    background: #fff5f5;
+    width: auto;
+    border: 1px solid red;
+    margin: 1px 1px -1px 0px;
+  }
+
+  label.sheet-tab:hover {
+    background: #ff2828;
+  }
+  input.sheet-tab {
+    display: none;
+    position: relative;
+  }
+  input.sheet-tab:checked + label.sheet-tab {
+    border-color: red;
+    color: black;
+    background-color: white;
+    position: relative;
+    border-bottom-color: white;
+  }
+  .sheet-tab-content {
+    background-color: white;
+    border: 1px solid red;
+    display: none;
+    padding: 1rem;
+    text-align: left;
+    z-index: 3;
+  }
+
+  input.sheet-tab1:checked ~ div.sheet-tab1,
+  input.sheet-tab2:checked ~ div.sheet-tab2,
+  input.sheet-tab3:checked ~ div.sheet-tab3,
+  input.sheet-tab4:checked ~ div.sheet-tab4,
+  input.sheet-tab5:checked ~ div.sheet-tab5,
+  input.sheet-tab6:checked ~ div.sheet-tab6,
+  input.sheet-tab7:checked ~ div.sheet-tab7,
+  input.sheet-tab8:checked ~ div.sheet-tab8,
+  input.sheet-tab9:checked ~ div.sheet-tab9,
+  input.sheet-tab10:checked ~ div.sheet-tab10 {
+    display: block;
+    box-sizing: border-box;
+  }
+}

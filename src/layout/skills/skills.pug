@@ -1,0 +1,12 @@
+include skills-variables
+include skills-mixins
+
+div.sheet-columns
+    div.sheet-column
+        h4 Awareness
+        each skill in awarenessSkills
+            +skill(skill)
+    div.sheet-column
+        h4 Body
+        each skill in bodySkills
+            +skill(skill)

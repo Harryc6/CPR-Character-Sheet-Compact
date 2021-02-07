@@ -1,0 +1,34 @@
+include character-variables
+include character-mixins
+
+div.sheet-columns
+    div.sheet-column
+        h4 Handle
+        input(type='text' name='attr_character_name')
+    div.sheet-column
+        h4 Role
+        select.sheet-roll-select(type='text' name='attr_role')
+            option(value='' name='empty') -
+            each role in roles
+                option(value=role name=role) #{role}
+    div.sheet-column
+        i.fa-redo-alt
+        h4 Health
+
+
+            button.sheet-reset(type='action' name='act_resethp')
+                span(class='fas fa-redo')
+            //button.sheet-death-save(type='roll' value="&{template:deathsave}{{charactername=@{character_name}}}{{target=@{deathsave}}}{{roll=[[1d10cs<@{deathsavehack}cf10]]}}") Death Save
+        div.sheet-field-wrapper(style='display: inline-block')
+            input(type='number', name='attr_hp' value=0)
+            |  /
+            input(type='number' name='attr_hp_max' value=0 readonly)
+
+div.sheet-columns
+    each attribute in attributes
+        +attribute(attribute.name, attribute.field)
+
+
+//- SCRIPTS
+script(type="text/worker")
+    include character.js

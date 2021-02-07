@@ -1,0 +1,5 @@
+mixin attribute(name, field)
+    div.sheet-column
+        button.sheet-button-as-h4(type='roll' value='&{template:minimal}{{charactername=@{character_name}}}{{label=#{ability}}{{roll=[[1d10 + @{' + (name === 'EMP' ? 'empathy' : field) + '} + @{finalmodifier}]]}}' + ((name === 'EMP') ? '{{message=Roll made using Effective Empathy score.}}' : '' )) #{name}
+        br
+        input(type='number' value=0 name='attr_' + field)

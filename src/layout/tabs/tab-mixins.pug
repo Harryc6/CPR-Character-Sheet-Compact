@@ -1,0 +1,31 @@
+mixin tab(tabName, index)
+    input(type='radio' name='sheet-select-tab' value=index id='tab' + index class='sheet-tab sheet-tab' + index checked=(index === 1))
+    if (index === 7)
+        label(class='sheet-tab' for='tab' + index style ='float: right; margin-right: 0;') #{tabName}
+    else
+        label(class='sheet-tab' for='tab' + index ) #{tabName}
+
+
+
+mixin tabContent(tabName, index)
+    div.sheet-tab-content(class='sheet-tab' + index)
+        div
+            span #{tabName} tab is called #{tabName}.
+
+        case index
+            when 1
+                include ../character/character
+            when 2
+                include ../skills/skills
+            when 3
+
+            when 4
+
+            when 5
+
+            when 6
+
+            when 7
+
+            default
+                p this shouldn't appear
